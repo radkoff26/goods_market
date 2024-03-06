@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.GoodsMarket.Text" parent="Theme.GoodsMarket">
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="Theme.GoodsMarket.Text.Small" parent="Theme.GoodsMarket.Text">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Theme.GoodsMarket.Text.Normal" parent="Theme.GoodsMarket.Text">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Theme.GoodsMarket.Text.Medium" parent="Theme.GoodsMarket.Text">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Theme.GoodsMarket.Text.Large" parent="Theme.GoodsMarket.Text">
+        <item name="android:textSize">24sp</item>
+    </style>
+</resources>
