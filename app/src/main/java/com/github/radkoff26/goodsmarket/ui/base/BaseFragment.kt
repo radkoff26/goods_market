@@ -30,4 +30,10 @@ abstract class BaseFragment<T : ViewBinding>(@LayoutRes private val layoutId: In
             _binding = onCreateBinding(it)
         }
     }
+
+    @CallSuper
+    override fun onDestroyView() {
+        _binding = null
+        super.onDestroyView()
+    }
 }
