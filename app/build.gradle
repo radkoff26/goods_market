@@ -1,0 +1,47 @@
+plugins {
+    alias libs.plugins.android.application
+    alias libs.plugins.kotlin.android
+}
+
+android {
+    namespace 'com.github.radkoff26.goodsmarket'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.github.radkoff26.goodsmarket"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation libs.androidx.paging.runtime
+    implementation libs.androidx.paging.rxjava2
+
+    implementation libs.rxjava.core
+    implementation libs.rxjava.android
+    implementation libs.rxjava.ktx
+
+    implementation libs.androidx.core
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.constraint
+
+    implementation libs.google.material
+}
