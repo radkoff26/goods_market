@@ -1,6 +1,7 @@
 plugins {
     alias libs.plugins.android.application
     alias libs.plugins.kotlin.android
+    alias libs.plugins.kotlin.plugin.serialization
 }
 
 android {
@@ -37,6 +38,13 @@ dependencies {
 
     implementation libs.androidx.paging.runtime
     implementation libs.androidx.paging.rxjava2
+
+    implementation libs.squareup.retrofit.core
+    implementation libs.squareup.retrofit.rxjava2
+    implementation libs.squareup.okhttp
+    implementation libs.retrofit.serialization.converter
+
+    implementation libs.kotlin.serialization.json
 
     implementation libs.rxjava.core
     implementation libs.rxjava.android
