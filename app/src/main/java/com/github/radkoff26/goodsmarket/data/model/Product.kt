@@ -16,10 +16,6 @@ data class Product(
     val discountPercentage: Float = 0F,
     @SerialName("rating")
     val rating: Float = 0F,
-    @SerialName("stock")
-    val amount: Int = 0,
-    @SerialName("brand")
-    val brand: String = "",
     @SerialName("category")
     val category: String = "",
     @SerialName("thumbnail")

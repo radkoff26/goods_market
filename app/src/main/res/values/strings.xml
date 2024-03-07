@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GoodsMarket</string>
+    <string name="price" formatted="true">%d$</string>
 </resources>

@@ -4,7 +4,10 @@
 androidx_appcompat = "1.6.1"
 androidx_constraint = "2.1.4"
 androidx_core = "1.12.0"
+androidx_fragmentktx = "1.6.2"
 androidx_paging = "3.2.1"
+# Dagger
+dagger_hilt = "2.44"
 # Google
 google_material = "1.11.0"
 # Kotlin
@@ -22,18 +25,22 @@ serialization_converter = "1.0.0"
 agp = "7.4.2"
 kotlin = "1.8.0"
 kotlin_plugin_serialization = "1.8.10"
+dagger_hilt_plugin = "2.44"
 
 [libraries]
 # AndroidX
-androidx-core = { group = "androidx.core", name = "core-ktx", version.ref = "androidx_core" }
-androidx-constraint = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "androidx_constraint" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidx_appcompat" }
+androidx-constraint = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "androidx_constraint" }
+androidx-core = { group = "androidx.core", name = "core-ktx", version.ref = "androidx_core" }
+androidx-fragmentktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "androidx_fragmentktx" }
 androidx-paging-runtime = { group = "androidx.paging", name = "paging-runtime", version.ref = "androidx_paging" }
 androidx-paging-rxjava2 = { group = "androidx.paging", name = "paging-rxjava2", version.ref = "androidx_paging" }
+# Dagger
+dagger-hilt-core = { group = "com.google.dagger", name = "hilt-android", version.ref = "dagger_hilt" }
+dagger-hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "dagger_hilt" }
 # Google
 google-material = { group = "com.google.android.material", name = "material", version.ref = "google_material" }
 # Kotlin
-
 kotlin-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlin_serialization_json" }
 # Rx
 rxjava-core = { group = "io.reactivex.rxjava2", name = "rxjava", version.ref = "rxjava" }
@@ -44,7 +51,7 @@ squareup-retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", 
 squareup-retrofit-rxjava2 = { group = "com.squareup.retrofit2", name = "adapter-rxjava2", version.ref = "retrofit" }
 squareup-okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
 # Other
-retrofit-serialization-converter = {group="com.jakewharton.retrofit", name="retrofit2-kotlinx-serialization-converter", version.ref="serialization_converter"}
+retrofit-serialization-converter = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "serialization_converter" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -52,3 +59,4 @@ android-library = { id = "com.android.library", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin_plugin_serialization" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin_plugin_serialization" }
+dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "dagger_hilt_plugin" }

@@ -2,6 +2,8 @@ plugins {
     alias libs.plugins.android.application
     alias libs.plugins.kotlin.android
     alias libs.plugins.kotlin.plugin.serialization
+    alias libs.plugins.dagger.hilt
+    id 'kotlin-kapt'
 }
 
 android {
@@ -50,9 +52,17 @@ dependencies {
     implementation libs.rxjava.android
     implementation libs.rxjava.ktx
 
-    implementation libs.androidx.core
     implementation libs.androidx.appcompat
     implementation libs.androidx.constraint
+    implementation libs.androidx.core
+    implementation libs.androidx.fragmentktx
 
     implementation libs.google.material
+
+    implementation libs.dagger.hilt.core
+    kapt libs.dagger.hilt.compiler
+}
+
+kapt {
+    correctErrorTypes = true
 }
