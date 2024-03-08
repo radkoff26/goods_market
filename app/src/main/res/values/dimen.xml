@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="product_item_width">160dp</dimen>
+    <dimen name="horizontal_padding_on_products_list">24dp</dimen>
+    <dimen name="padding_top_on_products_list">16dp</dimen>
+</resources>

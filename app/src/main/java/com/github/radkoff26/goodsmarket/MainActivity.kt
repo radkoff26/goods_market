@@ -11,9 +11,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        supportFragmentManager.beginTransaction().apply {
-            add(R.id.container, ProductsListFragment.newInstance())
-            commit()
+        if (supportFragmentManager.fragments.isEmpty()) {
+            supportFragmentManager.beginTransaction().apply {
+                add(R.id.container, ProductsListFragment.newInstance())
+                commit()
+            }
         }
     }
 }

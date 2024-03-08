@@ -59,6 +59,8 @@ dependencies {
 
     implementation libs.google.material
 
+    implementation libs.facebook.fresco
+
     implementation libs.dagger.hilt.core
     kapt libs.dagger.hilt.compiler
 }

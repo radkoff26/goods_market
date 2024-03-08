@@ -3,7 +3,6 @@ package com.github.radkoff26.goodsmarket.ui.fragment
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.GridLayoutManager
 import com.github.radkoff26.goodsmarket.R
 import com.github.radkoff26.goodsmarket.databinding.FragmentProductsListBinding
 import com.github.radkoff26.goodsmarket.ui.adapter.ProductsListAdapter
@@ -27,7 +26,17 @@ class ProductsListFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val adapter = ProductsListAdapter()
-        binding.bindAdapter(adapter)
+        binding.initUI(adapter)
+        viewModel.isDataLoadedLiveData.observe(viewLifecycleOwner) {
+            if (it) {
+                binding.showList()
+            } else {
+                binding.showLoader()
+            }
+        }
+        adapter.addOnPagesUpdatedListener {
+            viewModel.markDataAsLoaded()
+        }
         compositeDisposable.add(
             viewModel.productsFlowable.subscribeBy {
                 adapter.submitData(lifecycle, it)
@@ -40,11 +49,19 @@ class ProductsListFragment :
         super.onDestroyView()
     }
 
-    private fun FragmentProductsListBinding.bindAdapter(
-        productsListAdapter: ProductsListAdapter
-    ) {
-        productsRecyclerView.adapter = productsListAdapter
-        productsRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
+    private fun FragmentProductsListBinding.initUI(adapter: ProductsListAdapter) {
+        productsRecyclerView.adapter = adapter
+        toolbar.title = getString(R.string.products_title)
+    }
+
+    private fun FragmentProductsListBinding.showList() {
+        loaderContainer.visibility = View.GONE
+        productsRecyclerView.visibility = View.VISIBLE
+    }
+
+    private fun FragmentProductsListBinding.showLoader() {
+        loaderContainer.visibility = View.VISIBLE
+        productsRecyclerView.visibility = View.GONE
     }
 
     companion object {
