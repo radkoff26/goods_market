@@ -7,7 +7,7 @@ import retrofit2.http.Query
 
 interface ProductsDataSource {
 
-    @GET("/products?select=title,price,discountPercentage,thumbnail")
+    @GET("/products?select=title,description,price,discountPercentage,thumbnail")
     fun getProducts(
         @Query("skip") skip: Int,
         @Query("limit") limit: Int

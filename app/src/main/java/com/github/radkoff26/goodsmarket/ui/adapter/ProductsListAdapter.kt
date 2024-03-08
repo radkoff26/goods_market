@@ -31,6 +31,7 @@ class ProductsListAdapter :
                 productPrice.text = root.resources.getString(R.string.price, product.price)
                 productDiscount.text = "-${product.discountPercentage.toInt()}%"
                 productTitle.text = product.title
+                description.text = product.description
                 if (product.thumbnailUrl != "") {
                     productImage.setImageURI(product.thumbnailUrl)
                 }
