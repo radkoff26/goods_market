@@ -21,10 +21,19 @@
         <item name="android:textSize">24sp</item>
     </style>
 
+    <style name="Theme.GoodsMarket.Text.ExtraLarge" parent="Theme.GoodsMarket.Text">
+        <item name="android:textSize">28sp</item>
+    </style>
+
     <style name="Theme.GoodsMarket.Loader" parent="Theme.GoodsMarket">
         <item name="trackColor">?attr/colorSurface</item>
         <item name="indicatorColor">?attr/colorPrimary</item>
         <item name="trackThickness">4dp</item>
         <item name="android:indeterminate">true</item>
+    </style>
+
+    <style name="Theme.GoodsMarket.Toolbar" parent="Theme.GoodsMarket">
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="titleTextColor">?attr/colorOnPrimary</item>
     </style>
 </resources>

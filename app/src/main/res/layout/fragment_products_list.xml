@@ -7,11 +7,10 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
+        style="@style/Theme.GoodsMarket.Toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
         app:layout_constraintTop_toTopOf="parent"
-        app:titleTextColor="?attr/colorOnPrimary"
         tools:title="Title" />
 
     <androidx.recyclerview.widget.RecyclerView
