@@ -3,6 +3,7 @@ package com.github.radkoff26.goodsmarket.ui.fragment
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.github.radkoff26.goodsmarket.R
 import com.github.radkoff26.goodsmarket.databinding.FragmentProductsListBinding
 import com.github.radkoff26.goodsmarket.ui.adapter.ProductsListAdapter
@@ -25,7 +26,7 @@ class ProductsListFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val adapter = ProductsListAdapter()
+        val adapter = ProductsListAdapter(this::onItemClicked)
         binding.initUI(adapter)
         viewModel.isDataLoadedLiveData.observe(viewLifecycleOwner) {
             if (it) {
@@ -45,8 +46,13 @@ class ProductsListFragment :
     }
 
     override fun onDestroyView() {
-        compositeDisposable.dispose()
+        compositeDisposable.clear()
         super.onDestroyView()
+    }
+
+    private fun onItemClicked(id: Long) {
+        val action = ProductsListFragmentDirections.fromProductListToProductItem(id)
+        findNavController().navigate(action)
     }
 
     private fun FragmentProductsListBinding.initUI(adapter: ProductsListAdapter) {
@@ -55,18 +61,12 @@ class ProductsListFragment :
     }
 
     private fun FragmentProductsListBinding.showList() {
-        loaderContainer.visibility = View.GONE
+        loaderLayout.root.visibility = View.GONE
         productsRecyclerView.visibility = View.VISIBLE
     }
 
     private fun FragmentProductsListBinding.showLoader() {
-        loaderContainer.visibility = View.VISIBLE
+        loaderLayout.root.visibility = View.VISIBLE
         productsRecyclerView.visibility = View.GONE
-    }
-
-    companion object {
-
-        @JvmStatic
-        fun newInstance() = ProductsListFragment()
     }
 }

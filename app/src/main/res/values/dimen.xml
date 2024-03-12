@@ -3,5 +3,5 @@
     <dimen name="product_item_width">160dp</dimen>
     <dimen name="horizontal_padding_on_products_list">24dp</dimen>
     <dimen name="padding_top_on_products_list">16dp</dimen>
-    <dimen name="product_view_pager_image_height">300dp</dimen>
+    <dimen name="product_view_pager_image_height">360dp</dimen>
 </resources>

@@ -6,15 +6,21 @@
 
     <fragment
         android:id="@+id/fragment_products_list"
-        android:name="com.github.radkoff26.goodsmarket.ui.fragment.ProductsListFragment" />
+        android:name="com.github.radkoff26.goodsmarket.ui.fragment.ProductsListFragment">
+
+        <action
+            android:id="@+id/from_product_list_to_product_item"
+            app:destination="@id/fragment_product_item" />
+
+    </fragment>
 
     <fragment
         android:id="@+id/fragment_product_item"
         android:name="com.github.radkoff26.goodsmarket.ui.fragment.ProductItemFragment">
 
-        <action
-            android:id="@+id/from_product_list_to_product_item"
-            app:destination="@id/fragment_product_item" />
+        <argument
+            android:name="productId"
+            app:argType="long" />
 
     </fragment>
 </navigation>

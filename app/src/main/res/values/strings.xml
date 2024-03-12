@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">GoodsMarket</string>
     <string name="products_title">Products</string>
+    <string name="products_failed">Error while loading product…</string>
+    <string name="product_description">Description</string>
+    <string name="pager_count" formatted="true">%d/%d</string>
     <string name="price" formatted="true">%d$</string>
 </resources>

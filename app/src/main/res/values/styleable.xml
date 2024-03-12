@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ExpandableTextView">
+        <attr name="android:text" format="string" />
+        <attr name="maxLettersCount" format="integer" />
+        <attr name="android:textColor" format="color" />
+        <attr name="expandButtonColor" format="color" />
+        <attr name="expandButtonText" format="string" />
+    </declare-styleable>
+</resources>
