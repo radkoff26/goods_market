@@ -10,8 +10,11 @@
 
         <action
             android:id="@+id/from_product_list_to_product_item"
-            app:destination="@id/fragment_product_item" />
-
+            app:destination="@id/fragment_product_item"
+            app:enterAnim="@anim/product_item_transition_in_animation"
+            app:exitAnim="@anim/products_list_steady_animation"
+            app:popEnterAnim="@anim/products_list_steady_animation"
+            app:popExitAnim="@anim/product_item_transition_out_animation" />
     </fragment>
 
     <fragment
@@ -21,6 +24,5 @@
         <argument
             android:name="productId"
             app:argType="long" />
-
     </fragment>
 </navigation>
